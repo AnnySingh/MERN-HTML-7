@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: left;
+    }
+
+    form {
+      width: 300px;
+    }
+
+    form label {
+      display: inline-block;
+      width: 100px;
+      margin-bottom: 5px;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      display: inline-block;
+      width: 150px;
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+
+    form input[type="submit"] {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var password = document.getElementById("password").value;
+      var rePassword = document.getElementById("re-password").value;
+
+      if (password !== rePassword) {
+        alert("Password and Re-Password fields must match!");
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <form onsubmit="return validateForm()">
+      <label for="full-name">Full Name:</label>
+      <input type="text" id="full-name" name="full-name" required>
+      
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      
+      <label for="re-password">Re-Password:</label>
+      <input type="password" id="re-password" name="re-password" required>
+      
+      <label for="address">Address:</label>
+      <textarea id="address" name="address" rows="4" cols="30" required></textarea>
+      
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+      
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender">
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+      </select>
+      
+      <input type="submit" value="Save">
+    </form>
+  </div>
+</body>
+</html>
